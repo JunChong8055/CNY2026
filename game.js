@@ -55,7 +55,7 @@ else
 
 // Copy Room ID
 document.getElementById("btnCopy").addEventListener("click", (e) => {
-    navigator.clipboard.writeText(`${window.location.origin}/landing.html?roomId=${roomId}`);
+    navigator.clipboard.writeText(`${window.location.origin}/CNY2026/landing.html?roomId=${roomId}`);
     e.target.classList.add("clicked");
     setTimeout(() => {e.target.classList.remove("clicked")}, 500);
 });
@@ -310,4 +310,5 @@ async function GameCheck(selectedPositionIndex) {
     firebasePositionCommand["current_player"] = (isPlayer1) ? 2 : 1;
 
     await updateDoc(roomRef, firebasePositionCommand);
+
 }
