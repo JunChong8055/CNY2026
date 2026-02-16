@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大红大紫</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900" rel="stylesheet">
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F0ED;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .roomId{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-family: "League Spartan";
+        }
+        .roomId > div:nth-of-type(1){
+            font-weight: bold;
+        }
+        .roomId > button{
+            margin-left: 10px;
+            padding: 5px 5px 3px 5px;
+            outline: none;
+            border: none;
+            border-radius: 8px;
+            background-color: #32DB75;
+            color: #F4F0ED;
+            font-size: 20px;
+            font-family: "League Spartan";
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .roomId > button.clicked{
+            background-color: #F4F0ED;
+            color: #32DB75;
+        }
+
+        .gameboard{
+            width: 390px;
+            height: 390px;
+            margin: 10px 0px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            background: linear-gradient(
+                to bottom,
+                #A6B37D 0%,
+                #A6B37D 19.5%,
+
+                #D82D25 19.5%,
+                #D82D25 20.5%,
+
+                #CDEDEC 20.5%,
+                #CDEDEC 79.5%,
+
+                #9A3DCC 79.5%,
+                #9A3DCC 80.5%,
+
+                #A6B37D 80.5%,
+                #A6B37D 100%
+            );
+        }
+        .gameboard.player1{
+            background: linear-gradient(
+                to bottom,
+                #A6B37D 0%,
+                #A6B37D 19.5%,
+
+                #9A3DCC 19.5%,
+                #9A3DCC 20.5%,
+
+                #CDEDEC 20.5%,
+                #CDEDEC 79.5%,
+
+                #D82D25 79.5%,
+                #D82D25 80.5%,
+
+                #A6B37D 80.5%,
+                #A6B37D 100%
+            );
+        }
+        .gameboard > div{
+            margin: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            border: 5px solid #736249;
+            background-color: #B69B75;
+            cursor: pointer;
+        }
+        .gameboard > div:nth-child(-n+5), .gameboard > div:nth-child(n+21) {
+            border: 5px solid #C7E169;
+            background-color: #E2FC8C;
+        }
+        .gameboard > div.pop{
+            border-color: #F5CD00;
+            background-color: #FFE28D;
+            color: #E1BC00;
+            font-size: 48px;
+            font-family: Arial;
+        }
+        .gameboard > div > img{
+            width: 48px;
+        }
+
+        .scoreboard{
+            display: flex;
+            font-family: "League Spartan";
+            text-align: center;
+        }
+        .scoreboard > img{
+            width: 50px;
+            height: 50px;
+            margin-top: 5px;
+        }
+
+        .infoPlayer > div:nth-of-type(1){
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .infoPlayer > div:nth-of-type(2){
+            width: 82px;
+            font-size: 16px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .infoGames > div:nth-of-type(1){
+            width: 100px;
+            margin-top: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .infoGames > div:nth-of-type(2){
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="roomId">
+        <div>ROOM ID:&nbsp;</div>
+        <div id="lblRoomId"></div>
+        <button id="btnCopy">COPY</button>
+    </div>
+
+    <div class="gameboard">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="scoreboard">
+        <img id="imgPlayer1" src="Images/ScorePlayer1.png">
+        <div class="infoPlayer">
+            <div id="lblPlayer1Score"></div>
+            <div id="lblPlayer1Nickname"></div>
+        </div>
+        <div class="infoGames">
+            <div id="lblCenter">vs</div>
+            <div id="lblAction"></div>
+        </div>
+        <div class="infoPlayer">
+            <div id="lblPlayer2Score"></div>
+            <div id="lblPlayer2Nickname"></div>
+        </div>
+        <img id="imgPlayer2" src="Images/ScorePlayer2.png">
+    </div>
+</body>
+<script src="game.js" type="module"></script>
+</html>

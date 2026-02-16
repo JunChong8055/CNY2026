@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大红大紫</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900" rel="stylesheet">
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F0ED;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img{
+            width: 120px;
+            margin-bottom: 25px;
+        }
+
+        label{
+            width: 360px;
+            font-size: 28px;
+            font-family: "League Spartan";
+            font-weight: bold;
+            text-align: left;
+        }
+        input{
+            width: 340px;
+            padding: 5px 10px;
+            outline: none;
+            border: none;
+            border-bottom: 5px solid #771419;
+            background-color: transparent;
+            font-size: 28px;
+            font-family: "League Spartan";
+        }
+        input:nth-of-type(2){
+            margin-bottom: 10px;
+        }
+
+        button{
+            width: 360px;
+            height: 62px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #771419;
+            border-radius: 15px;
+            background-color: #E5303A;
+            color: #FFFFFF;
+            font-size: 32px;
+            font-family: "League Spartan";
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        div{
+            font-family: "League Spartan";
+            font-weight: bold;
+        }
+        div:nth-of-type(1){
+            width: 360px;
+            height: 15px;
+            margin-top: 30px;
+            color: #FF0000;
+            font-size: 16px;
+            text-align: right;
+        }
+        div:nth-of-type(2){
+            margin: 15px 0px;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>    
+    <img src="Images/GameLogo.png"></img>
+    <label for="txtNickname">NICKNAME</label>
+    <input type="text" id="txtNickname">
+    <div id="errorRoomId"></div>
+    <input type="text" id="txtRoomId" placeholder="ENTER ROOM ID">
+    <button id="btnJoin">JOIN ROOM</button>
+    <div>OR</div>
+    <button id="btnCreate">CREATE NEW ROOM</button>
+</body>
+<script src="landing.js" type="module"></script>
+</html>
