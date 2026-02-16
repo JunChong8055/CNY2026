@@ -1,0 +1,2 @@
+# CNY2026
+CNY 2026 Mini Game
